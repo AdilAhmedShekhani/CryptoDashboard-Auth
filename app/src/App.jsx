@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Support from "./pages/Support/Support";
 import TransactionPage from "./pages/Transaction/Transaction";
+import Signup from "./pages/Auth/Signup/Signup";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/support",
     element: <Support />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
 ]);
 
