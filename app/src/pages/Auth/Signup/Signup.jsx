@@ -43,50 +43,70 @@ const Signup = () => {
                   <Flex gap="4">
                     <Field name="name">
                       {({ field, meta }) => (
-                        <FormControl>
+                        <FormControl isInvalid={!!(meta.error && meta.touched)}>
                           <FormLabel htmlFor="name">Name</FormLabel>
                           <Input
+                            {...field}
                             name="name"
                             placeholder="Enter your name ..."
                           />
                         </FormControl>
                       )}
                     </Field>
-
-                    <FormControl>
-                      <FormLabel htmlFor="surname">Surname</FormLabel>
-                      <Input
-                        name="surname"
-                        placeholder="Enter Your surname ..."
-                      />
-                    </FormControl>
+                    <Field name="surname">
+                      {({ field, meta }) => (
+                        <FormControl isInvalid={!!(meta.error && meta.touched)}>
+                          <FormLabel htmlFor="surname">Surname</FormLabel>
+                          <Input
+                            {...field}
+                            name="surname"
+                            placeholder="Enter Your surname ..."
+                          />
+                        </FormControl>
+                      )}
+                    </Field>
                   </Flex>
-                  <FormControl>
-                    <FormLabel htmlFor="email">Email</FormLabel>
-                    <Input
-                      name="email"
-                      type="email"
-                      placeholder="Enter Your email ..."
-                    />
-                  </FormControl>
-                  <FormControl>
-                    <FormLabel htmlFor="password">Password</FormLabel>
-                    <Input
-                      name="password"
-                      type="password"
-                      placeholder="Enter Your password ..."
-                    />
-                  </FormControl>
-                  <FormControl>
-                    <FormLabel htmlFor="repeatPassword">
-                      RepeatPassword
-                    </FormLabel>
-                    <Input
-                      name="repeatPassword"
-                      type="password"
-                      placeholder="Enter Your repeatPassword ..."
-                    />
-                  </FormControl>
+                  <Field name="email">
+                    {({ field, meta }) => (
+                      <FormControl isInvalid={!!(meta.error && meta.touched)}>
+                        <FormLabel htmlFor="email">Email</FormLabel>
+                        <Input
+                          {...field}
+                          name="email"
+                          type="email"
+                          placeholder="Enter Your email ..."
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="password">
+                    {({ field, meta }) => (
+                      <FormControl isInvalid={!!(meta.error && meta.touched)}>
+                        <FormLabel htmlFor="password">Password</FormLabel>
+                        <Input
+                          {...field}
+                          name="password"
+                          type="password"
+                          placeholder="Enter Your password ..."
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="repeatPassword">
+                    {({ field, meta }) => (
+                      <FormControl isInvalid={!!(meta.error && meta.touched)}>
+                        <FormLabel htmlFor="repeatPassword">
+                          RepeatPassword
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          name="repeatPassword"
+                          type="password"
+                          placeholder="Enter Your repeatPassword ..."
+                        />
+                      </FormControl>
+                    )}
+                  </Field>
                   <Checkbox>
                     <Text textStyle="p3">
                       I agree with{" "}
