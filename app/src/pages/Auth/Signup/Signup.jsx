@@ -6,6 +6,7 @@ import {
   Container,
   Flex,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Input,
   Stack,
@@ -15,6 +16,20 @@ import {
 import { Field, Form, Formik } from "formik";
 
 import { Link } from "react-router-dom";
+
+import { object, string, ref } from "yup";
+
+const signupValidationSchema = object({
+  name: string().required("Name is required"),
+  surname: string().required("Surname is required"),
+  email: string().email("Email is Invalid").required("Email is required"),
+  password: string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+  repeatPassword: string()
+    .oneOf([ref("password"), null], "Passwords must match")
+    .required("Repeat password is required"),
+});
 
 const Signup = () => {
   return (
@@ -36,6 +51,7 @@ const Signup = () => {
             onSubmit={(values) => {
               console.log(values);
             }}
+            validationSchema={signupValidationSchema}
           >
             {() => (
               <Form>
@@ -50,6 +66,7 @@ const Signup = () => {
                             name="name"
                             placeholder="Enter your name ..."
                           />
+                          <FormErrorMessage>{meta.error}</FormErrorMessage>
                         </FormControl>
                       )}
                     </Field>
@@ -62,6 +79,7 @@ const Signup = () => {
                             name="surname"
                             placeholder="Enter Your surname ..."
                           />
+                          <FormErrorMessage>{meta.error}</FormErrorMessage>
                         </FormControl>
                       )}
                     </Field>
@@ -76,6 +94,7 @@ const Signup = () => {
                           type="email"
                           placeholder="Enter Your email ..."
                         />
+                        <FormErrorMessage>{meta.error}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
@@ -89,6 +108,7 @@ const Signup = () => {
                           type="password"
                           placeholder="Enter Your password ..."
                         />
+                        <FormErrorMessage>{meta.error}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
@@ -104,6 +124,7 @@ const Signup = () => {
                           type="password"
                           placeholder="Enter Your repeatPassword ..."
                         />
+                        <FormErrorMessage>{meta.error}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
