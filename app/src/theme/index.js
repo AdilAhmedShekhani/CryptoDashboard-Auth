@@ -26,12 +26,12 @@ export const theme = extendTheme(
     textStyles: {
       h1: {
         fontSize: {
-          base: "30px",
+          base: "32px",
           md: "32px",
         },
         color: "p.black",
         lineHeight: {
-          base: "34px",
+          base: "32px",
           md: "36px",
         },
       },
