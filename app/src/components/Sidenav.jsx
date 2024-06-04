@@ -56,7 +56,6 @@ const Sidenav = () => {
                   bg: "#F3F3F7",
                   color: "#171717",
                 }}
-                color="#797E82"
               >
                 <Icon as={nav.icon} />
                 <Text fontSize="14px" fontWeight="medium">
