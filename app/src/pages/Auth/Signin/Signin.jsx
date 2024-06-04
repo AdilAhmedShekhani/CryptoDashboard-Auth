@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Card,
   Center,
   Checkbox,
   Container,
@@ -20,6 +19,7 @@ import { Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 
 import { object, string, ref } from "yup";
+import Card from "../../../components/Card";
 
 const signinValidationSchema = object({
   name: string().required("Name is required"),
@@ -35,9 +35,9 @@ const signinValidationSchema = object({
 
 const Signin = () => {
   return (
-    <Container>
+    <Container bg="white">
       <Center minH="100vh">
-        <Card p="6" borderRadius="1rem" w="456px">
+        <Card>
           <Text fontWeight="medium" textStyle="h1">
             Welcome to Crypto App
           </Text>
