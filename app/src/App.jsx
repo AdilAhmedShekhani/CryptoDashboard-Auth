@@ -9,6 +9,7 @@ import RegisterEmailVerify from "./pages/Auth/RegisterEmailVerify/RegisterEmailV
 import RegisterSuccess from "./pages/Auth/RegisterSuccess/RegisterSuccess";
 import ForgotPassword from "./pages/Auth/ForgotPassword/ForgotPassword";
 import ForgotPasswordSent from "./pages/Auth/ForgotPasswordSent/ForgotPasswordSent";
+import ResetPasswordSuccess from "./pages/Auth/ResetPasswordSuccess/ResetPasswordSuccess";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/forgot-success",
     element: <ForgotPasswordSent />,
+  },
+  {
+    path: "/reset-success",
+    element: <ResetPasswordSuccess />,
   },
 ]);
 
