@@ -8,31 +8,31 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { MdEmail } from "react-icons/md";
+import { BsPatchCheckFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const RegisterEmailVerify = () => {
+const RegisterSuccess = () => {
   return (
     <Center minH="100vh">
       <Card>
         <VStack spacing={6}>
-          <Icon as={MdEmail} boxSize="48px" color="p.purple" />
+          <Icon as={BsPatchCheckFill} boxSize="48px" color="green" />
           <Text textStyle="h4" fontWeight="medium" color="p.black">
-            Email Verification
+            Successfully Registration
           </Text>
           <Text textAlign="center" textStyle="p2" color="black.60">
-            We have Sent you an email verification to{" "}
-            <Box as="b" color="p.black">
-              jenny.wilson@gmail.com
-            </Box>
-            . If you didn't receive it, click the button below.
+            Hurray! You have successfully created your account. Enter the app to
+            explore all its's features.
           </Text>
-          <Button w="full" variant="outline">
-            Re-Send Email
-          </Button>
+          <Box w="full">
+            <Link to="/signin">
+              <Button w="full">Enter the app</Button>
+            </Link>
+          </Box>
         </VStack>
       </Card>
     </Center>
   );
 };
 
-export default RegisterEmailVerify;
+export default RegisterSuccess;
