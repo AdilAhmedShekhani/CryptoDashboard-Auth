@@ -10,6 +10,7 @@ import RegisterSuccess from "./pages/Auth/RegisterSuccess/RegisterSuccess";
 import ForgotPassword from "./pages/Auth/ForgotPassword/ForgotPassword";
 import ForgotPasswordSent from "./pages/Auth/ForgotPasswordSent/ForgotPasswordSent";
 import ResetPasswordSuccess from "./pages/Auth/ResetPasswordSuccess/ResetPasswordSuccess";
+import ResetPassword from "./pages/Auth/ResetPassword/ResetPassword";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/reset-success",
     element: <ResetPasswordSuccess />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
   },
 ]);
 
