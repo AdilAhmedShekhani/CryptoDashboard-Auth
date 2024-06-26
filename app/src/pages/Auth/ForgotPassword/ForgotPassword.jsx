@@ -1,7 +1,20 @@
-import { Button, Card, Center, FormControl, FormErrorMessage, FormLabel, Input, Stack, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Card,
+  Center,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Icon,
+  Input,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   const forgotValidationSchema = object({
@@ -10,7 +23,10 @@ const ForgotPassword = () => {
   return (
     <Center minH="100vh">
       <Card>
-        <Text fontWeight="medium" textStyle="h1">
+        <Link to="/signin">
+          <Icon as={AiOutlineArrowLeft} boxSize="6" />
+        </Link>
+        <Text mt="4" fontWeight="medium" textStyle="h1">
           Forgot Password
         </Text>
         <Text textStyle="p2" color="black.60" mt="4">
@@ -28,7 +44,7 @@ const ForgotPassword = () => {
         >
           {() => (
             <Form>
-              <Stack mt="10" spacing={6}>
+              <Stack mt="8" spacing={6}>
                 <Field name="email">
                   {({ field, meta }) => (
                     <FormControl isInvalid={!!(meta.error && meta.touched)}>
