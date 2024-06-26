@@ -2,6 +2,7 @@ import {
   Button,
   Card,
   Center,
+  Container,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -21,7 +22,8 @@ const ForgotPassword = () => {
     email: string().email("Email is Invalid").required("Email is required"),
   });
   return (
-    <Center minH="100vh">
+    <Container>
+        <Center minH="100vh">
       <Card>
         <Link to="/signin">
           <Icon as={AiOutlineArrowLeft} boxSize="6" />
@@ -69,6 +71,7 @@ const ForgotPassword = () => {
         </Formik>
       </Card>
     </Center>
+    </Container>
   );
 };
 
